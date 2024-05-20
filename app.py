@@ -3,7 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
 # Load the model and tokenizer
-@st.cache_resource
+@st.cache(allow_output_mutation=True)
 def load_model():
     model_name = "heegyu/llama-small-randomweights"
     tokenizer = AutoTokenizer.from_pretrained(model_name)
